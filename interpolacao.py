@@ -4,21 +4,7 @@
 NAO MANDE SPAM!!!
 """
 __version__ = "0.1.1"
-
-
-email_tmpl = """
-Olá %(nome)s
-
-Tem interesse em comprar %(produto)s?
-
-Este produto é ótimo para resolver %(texto)s
-
-Clique agora em %(link)s
-
-Apenas %(quantidade)d disponiveis!
-
-Preço promocional %(preco).2f
-"""
+ 
 import sys
 import os
 
@@ -34,7 +20,7 @@ path = os.curdir
 filepath = os.path.join(path, filename)
 templatepath = os.path.join(path, templatename)
 
-for line in open(filepath)
+for line in open(filepath):
     name, email = line.split(",")
 
     # TODO: Substituir por envio de email
@@ -45,11 +31,10 @@ for line in open(filepath)
         %{
             "nome": name,
             "produto": "caneta",
-            "texto": "Escrever muito bem"
-            "link": "http//canetaslegais.com"
+            "texto": "Escrever muito bem",
+            "link": "http//canetaslegais.com",
             "quantidade": 1,
             "preco": 50.5,
         }
     )
-    print("-"*50)
-
+    print("-" * 50)
